@@ -13,3 +13,6 @@ export const reverseString = (str: string): string => {
 
   return result;
 };
+
+export const normaliseString = (str: string): string =>
+  str.trim().toLowerCase().replace(' ', '');

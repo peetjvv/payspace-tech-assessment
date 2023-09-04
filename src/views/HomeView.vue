@@ -12,10 +12,10 @@ const strings = [
   <main>
     <h2>Home page</h2>
 
+    <section>
     <h3>Part 1</h3>
-    <p>Play around on this page</p>
-
-    <br />
+    <p>Play around on this page and the books page</p>
+</section>
 
     <h3>Part 2</h3>
     <p>Navigate to the <RouterLink to="/books">Books</RouterLink> page</p>
@@ -62,6 +62,8 @@ const strings = [
     >
       String reverse source code
     </a>
+
+    <br/>
 
     <h3>Part 5</h3>
     <p>Code review</p>
