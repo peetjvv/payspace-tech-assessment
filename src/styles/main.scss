@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Sniglet&display=swap');
 @import './variables.scss';
-@import 'bootstrap/scss/bootstrap';
+@import './bootstrap-setup.scss';
 
 body {
   margin: unset;
@@ -11,16 +11,30 @@ body {
   #app {
     width: 100vw;
     height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    code {
+      background-color: #121212;
+    }
   }
 }
 
 // dark mode overrides
-@if $allow-dark-mode {
-  @media (prefers-color-scheme: dark) {
-    body {
-      color: white;
-      background: darkslategrey;
-    }
+@media (prefers-color-scheme: dark) {
+  // TODO: set these styles in bootstrap setup
+
+  body {
+    // TODO: use variables
+    color: #ffffff;
+    background: #2a3c4e;
+  }
+
+  a {
+    color: rgb(186, 186, 250);
+
+    // TODO: hover style
   }
 }
 
