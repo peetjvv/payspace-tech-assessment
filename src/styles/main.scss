@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Sniglet&display=swap');
+@import './variables.scss';
+@import 'bootstrap/scss/bootstrap';
+
+body {
+  margin: unset;
+
+  font-family: 'Sniglet', cursive;
+  font-size: 1rem;
+
+  #app {
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+// dark mode overrides
+@if $allow-dark-mode {
+  @media (prefers-color-scheme: dark) {
+    body {
+      color: white;
+      background: darkslategrey;
+    }
+  }
+}
+
+// tablet
+@media screen and (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet) {
+}
+
+// mobile
+@media screen and (max-width: $breakpoint-mobile) {
+}
