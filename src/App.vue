@@ -36,9 +36,12 @@ header {
     a {
       &.router-link-active,
       &.router-link-exact-active {
-        // TODO: use anchorlink colour variable
-        // var(--bs-nav-link-color)
-        color: lighten(rgb(186, 186, 250), 10%);
+        color: lighten($anchor-color, 10%);
+
+        &:hover {
+          cursor: default;
+          text-decoration: unset;
+        }
       }
     }
   }
@@ -48,7 +51,7 @@ header,
 footer {
   padding: 1rem 2rem;
 
-  background-color: darken(#2a3c4e, 5%); // TODO: use body background variable
+  background-color: darken($body-background, 5%);
 }
 
 main {

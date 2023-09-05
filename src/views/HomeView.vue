@@ -31,8 +31,8 @@ const strings = [
     <section>
       <h3>Part 4</h3>
       <span>Reversing a string</span>
-      <div class="row">
-        <div class="col">
+      <div class="reverse-string-container">
+        <div>
           <h4>Input</h4>
           <ul class="list-group">
             <li
@@ -44,7 +44,7 @@ const strings = [
             </li>
           </ul>
         </div>
-        <div class="col">
+        <div>
           <h4>Output</h4>
           <ul class="list-group">
             <li
@@ -81,3 +81,39 @@ const strings = [
     </section>
   </main>
 </template>
+
+<style lang="scss">
+section {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid grey;
+  margin-bottom: 1rem;
+}
+
+.reverse-string-container {
+  display: flex;
+  justify-content: space-between;
+
+  >* {
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+}
+  
+// tablet
+@media screen and (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet) {
+}
+
+// mobile
+@media screen and (max-width: $breakpoint-mobile) {
+  .reverse-string-container {
+    flex-direction: column;
+
+    >* {
+      &:not(:last-child) {
+        margin-right: unset;
+      }
+    }
+  }
+}
+</style>

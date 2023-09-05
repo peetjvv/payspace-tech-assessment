@@ -16,25 +16,22 @@ body {
     flex-direction: column;
 
     code {
-      background-color: #121212;
+      background-color: $code-background;
     }
   }
 }
 
-// dark mode overrides
-@media (prefers-color-scheme: dark) {
-  // TODO: set these styles in bootstrap setup
+body {
+  color: $text-color;
+  background: $body-background;
+}
 
-  body {
-    // TODO: use variables
-    color: #ffffff;
-    background: #2a3c4e;
-  }
+a {
+  color: $anchor-color;
+  text-decoration: none;
 
-  a {
-    color: rgb(186, 186, 250);
-
-    // TODO: hover style
+  &:hover {
+    text-decoration: underline;
   }
 }
 

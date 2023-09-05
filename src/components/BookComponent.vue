@@ -4,15 +4,6 @@ import { type Book } from '../data/books';
 defineProps<{
   book: Book;
 }>();
-
-// export default {
-//   data() {
-//     return {
-//       ...book,
-//       image: require(book.imgSrc),
-//     };
-//   },
-// };
 </script>
 
 <template>
@@ -34,7 +25,7 @@ defineProps<{
   max-width: 50vw;
 
   padding: 0.25rem 0.5rem;
-  border: 1px solid white; // TODO: dynamic based on dark/light mode
+  border: 1px solid white;
 
   img {
     height: 200px;

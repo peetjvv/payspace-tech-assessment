@@ -101,7 +101,17 @@ const sortedFilteredBooks = computed(() =>
 <style lang="scss">
 .filters-container,
 .sort-container {
+  display: flex;
+  flex-direction: row;
   margin-bottom: 1rem;
+
+  > * {
+    flex-basis: 300px;
+
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
 
   label {
     display: flex;
@@ -109,8 +119,6 @@ const sortedFilteredBooks = computed(() =>
 
     input,
     select {
-      min-width: 100px;
-      max-width: 300px;
       margin-bottom: 0.5rem;
     }
   }
@@ -118,7 +126,41 @@ const sortedFilteredBooks = computed(() =>
 
 .books-container {
   display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, 30%); // TODO: change responsive
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, 20%);
+}
+
+// tablet
+@media screen and (min-width: $breakpoint-mobile) and (max-width: $breakpoint-tablet) {
+  .books-container {
+    grid-template-columns: repeat(auto-fit, 30%);
+  }
+}
+
+// mobile
+@media screen and (max-width: $breakpoint-mobile) {
+  .filters-container,
+  .sort-container {
+    flex-direction: column;
+
+    > * {
+      flex-basis: unset;
+
+      &:not(:last-child) {
+        margin-right: unset;
+      }
+    }
+  }
+
+  .books-container {
+    grid-template-columns: repeat(auto-fit, 40%);
+  }
+}
+
+// narrow-mobile
+@media screen and (max-width: $breakpoint-mobile-narrow) {
+  .books-container {
+    grid-template-columns: repeat(auto-fit, 90%);
+  }
 }
 </style>
